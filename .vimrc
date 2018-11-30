@@ -73,20 +73,32 @@ inoremap <C-Down> <Esc>:m .-2<CR>==gi
 vnoremap <C-Up> :m '>+1<CR>gv=gv
 vnoremap <C-Down> :m '<-2<CR>gv=gv
 
-"misc
-map <C-e> :NERDTreeToggle<CR> " Open NERDTree
-map <F6> :split<CR>           "split the current file (horizontal split)
-map <S-F6> : vsplit<CR>       "vertical split
-map <C-Q> :q!<CR>             "quit without saving
-map <leader>ee :NERDTreeFind<CR>          "open NerdTree in current file directory
-nmap <silent> <leader>rc :so $MYVIMRC<CR> "reload vimrc
-nnoremap ; :                              "allow ; to act like : in normal mode
-nnoremap <S-CR> :noh<CR>                  "clear search with shift+enter
-nnoremap <C-Right> :ALENext<CR>           "next error or lint
-nnoremap <C-Left> :ALEPrevious<CR>        "prev error or lint
-nnoremap <leader>jd :YcmCompleter GoTo<CR>"go to definition
-nnoremap gm m              "create a mark
-nnoremap <C-p> :GFiles<CR> "open fzf using only git files
+"open NERDTree
+map <C-e> :NERDTreeToggle<CR>
+"split the current file (horizontal split)
+map <F6> :split<CR>
+"vertical split
+map <S-F6> : vsplit<CR> 
+"quit without saving
+map <C-Q> :q!<CR>
+"open NerdTree in current file directory
+map <leader>ee :NERDTreeFind<CR>
+"reload vimrc   
+nmap <silent> <leader>rc :so $MYVIMRC<CR> 
+"allow ; to act like : in normal mode
+nnoremap ; :
+"clear search with shift+enter
+nnoremap <S-CR> :noh<CR>
+"next error or lint
+nnoremap <C-Right> :ALENext<CR>
+"prev error or lint
+nnoremap <C-Left> :ALEPrevious<CR>
+"go to definition
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+"create a mark
+nnoremap gm m
+"open fzf using only git files
+nnoremap <C-p> :GFiles<CR>
 
 
 " Plugins
@@ -149,3 +161,6 @@ let g:jsx_ext_required=0    "allow JSX in .js files
 let g:material_style='oceanic'
 let g:airline_theme='material'
 colorscheme vim-material
+
+"remap add mark, shoud be here for some reason
+nnoremap gm m
