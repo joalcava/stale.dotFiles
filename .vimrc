@@ -33,10 +33,6 @@ set go-=m                   "remove menu bar
 set go-=r                   "remove right-hand scroll bar
 set go-=L                   "remove left-hand scroll bar
 set background=dark         "use dark themes
-"colorscheme
-colorscheme vim-material
-let g:material_style='oceanic'
-let g:airline_theme='material'
 "font
 if has("gui_running")
   if has("gui_gtk2")
@@ -45,6 +41,8 @@ if has("gui_running")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
     set guifont=iosevka:h12
+    "use directx to render fonts
+    set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
   endif
 endif
 
@@ -146,3 +144,8 @@ let g:ale_fixers = {'javascript': ['standard']}  "use standard js
 let g:ale_lint_on_save = 1  "lint on save
 let g:ale_fix_on_save = 1   "fix on save
 let g:jsx_ext_required=0    "allow JSX in .js files
+
+"colorscheme
+let g:material_style='oceanic'
+let g:airline_theme='material'
+colorscheme vim-material
