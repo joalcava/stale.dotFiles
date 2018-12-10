@@ -6,7 +6,7 @@ set hlsearch                "highlight search matches
 set expandtab               "indent using spaces instead of tabs
 set shiftwidth=2            "the number of spaces to use for each indent
 set softtabstop=2           "number of spaces to use for a <Tab> during editing operations
-set spelllang=en_us,es_es   "add es dictionary to spelling
+set spelllang=es_es,en_us   "add es dictionary to spelling
 set number                  "show line numbers
 set nowrap                  "don't wrap lines
 set showtabline=2           "always enable tabs
@@ -43,6 +43,8 @@ if has("gui_running")
     set guifont=iosevka:h12
     "use directx to render fonts
     set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
+  else
+    set guifont=iosevka\ 14
   endif
 endif
 
@@ -98,7 +100,8 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 "create a mark
 nnoremap gm m
 "open fzf using only git files
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :FZF<CR>
+"nnoremap <C-p> :GFiles<CR>
 
 
 " Plugins
@@ -121,8 +124,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
-Plug 'svermeulen/vim-easyclip'
 Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-repeat'
 
 "misc
 Plug 'tpope/vim-sensible'
