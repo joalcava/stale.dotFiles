@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-11-02 22:11:52" build="180626">
+		<key name=".Vanilla" modified="2019-11-14 12:40:14" build="180626">
 			<value name="Language" type="string" data="en"/>
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data=""/>
@@ -144,7 +144,7 @@
 			<value name="QuakeStyle" type="hex" data="01"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
 			<value name="RestoreInactive" type="hex" data="00"/>
-			<value name="QuakeAnimation" type="ulong" data="300"/>
+			<value name="QuakeAnimation" type="ulong" data="100"/>
 			<value name="HideCaption" type="hex" data="00"/>
 			<value name="HideChildCaption" type="hex" data="01"/>
 			<value name="FocusInChildWindows" type="hex" data="01"/>
@@ -174,8 +174,8 @@
 				<line data="alias ~=cd C:\Users\aleja"/>
 				<line data="alias gaa=git add -A"/>
 				<line data="alias gcamno=git commit --amend --no-edit"/>
-				<line data="alias gcam=git commit --amend"/>
-				<line data="alias gc=git commit"/>
+				<line data="alias gcam=git commit --amend $."/>
+				<line data="alias gc=git commit $."/>
 				<line data="alias gca=git commit -a"/>
 				<line data="alias grso=git remote show origin"/>
 				<line data="alias grsu=git remote show upstream"/>
@@ -183,16 +183,21 @@
 				<line data="alias gs=git status $*"/>
 				<line data="alias gp=git push $*"/>
 				<line data=" "/>
-				<line data="alias ispt=cd C:\Users\aleja\proyectos\Isoptimo\src\Web"/>
+				<line data="alias ispt=cd C:\Users\aleja\proyectos\Isoptimo"/>
+				<line data="alias irun=cd C:\Users\aleja\proyectos\Isoptimo\src\Web &amp;&amp; dotnet watch run"/>
+				<line data="alias iweb=cd C:\Users\aleja\proyectos\Isoptimo\src\Web"/>
+				<line data="alias iclient=cd C:\Users\aleja\proyectos\Isoptimo\src\Web\ClientApp"/>
+				<line data="alias ipersistence=cd C:\Users\aleja\proyectos\Isoptimo\src\Persistence"/>
 				<line data=" "/>
-				<line data="alias dwr=dotnet watch run"/>
-				<line data="alias dma=dotnet ef migrations add $*"/>
-				<line data="alias dmr=dotnet ef migrations remove"/>
-				<line data="alias ddup=donet ef database update"/>
-				<line data="alias ddd=dotnet ef database drop"/>
-				<line data="alias dr=dotnet run"/>
-				<line data="alias dres=dotnet restore"/>
-				<line data="alias db=dotnet build"/>
+				<line data=" "/>
+				<line data="alias dwaru=dotnet watch run"/>
+				<line data="alias defmiad=dotnet ef migrations add $*"/>
+				<line data="alias defmire=dotnet ef migrations remove"/>
+				<line data="alias defdaup=dotnet ef database update"/>
+				<line data="alias defdadr=dotnet ef database drop"/>
+				<line data="alias dru=dotnet run"/>
+				<line data="alias dre=dotnet restore"/>
+				<line data="alias dbu=dotnet build"/>
 			</value>
 			<value name="CTS.Intelligent" type="hex" data="01"/>
 			<value name="CTS.IntelligentExceptions" type="string" data="far|vim.exe"/>
