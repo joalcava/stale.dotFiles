@@ -1,15 +1,21 @@
 export PATH=$HOME/bin:/usr/local/bin:~/.dotnet/tools:$PATH
+export PATH=$HOME/scripts:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/joalcava/.oh-my-zsh"
 
-ZSH_THEME="bira"
+ZSH_THEME="af-magic"
 
 plugins=(
+  git-auto-fetch
+  docker
+  docker-compose
   zsh-autosuggestions
   git
   z
 )
+
+# GIT_AUTO_FETCH_INTERVAL=1200 # seconds
 
 source $ZSH/oh-my-zsh.sh
 
@@ -25,18 +31,25 @@ source $ZSH/oh-my-zsh.sh
 
 alias dnf.up="sudo dnf update"
 
-alias dnet.r="dotnet watch run"
-alias dnet.ef.du="dotnet ef database update"
-alias dnet.ef.dd="dotnet ef database drop"
-alias dnet.ef.mr="dotnet ef migrations remove"
-alias dnet.ef.ma="dotnet ef migrations add"
+alias clr="clear"
+
+alias aptu="sudo apt update"
+alias aptg="sudo apt upgrade"
+alias apti="sudo apt install"
+alias apts="sudo apt search"
+alias aptr="sudo apt remove"
+alias aptar="sudo apt autoremove"
+
+alias dnb="dotnet build"
+alias dnr="dotnet run"
+alias dnw="dotnet watch"
+alias dnwr="dotnet watch run"
+alias dnres="dotnet restore"
+alias dnefdu="dotnet ef database update"
+alias dnefdd="dotnet ef database drop"
+alias dnefmr="dotnet ef migrations remove"
+alias dnefma="dotnet ef migrations add"
 
 alias mssql="sudo docker start sqlserver"
 
-alias go.i="cd ~/proyectos/isoptimo"
-
-alias g.b="git branch"
-alias g.a.="git add ."
-alias g.s.="git status ."
-alias g.s="git status"
-alias g.l="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

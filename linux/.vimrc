@@ -6,7 +6,7 @@ set hlsearch                "highlight search matches
 set expandtab               "indent using spaces instead of tabs
 set shiftwidth=2            "the number of spaces to use for each indent
 set softtabstop=2           "number of spaces to use for a <Tab> during editing operations
-set spelllang=es_es,en_us   "add es dictionary to spelling
+set spelllang=es_es,en_us   "add es and en dictionaries to spelling
 set number                  "show line numbers
 set nowrap                  "don't wrap lines
 set showtabline=2           "always enable tabs
@@ -44,7 +44,7 @@ if has("gui_running")
     "use directx to render fonts
     set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
   else
-    set guifont=iosevka\ 14
+    set guifont=fira\ code\ 10
   endif
 endif
 
@@ -136,6 +136,8 @@ Plug 'rainglow/vim'
 Plug 'hzchirs/vim-material'
 Plug 'soft-aesthetic/soft-era-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
@@ -161,9 +163,16 @@ let g:ale_fix_on_save = 1   "fix on save
 let g:jsx_ext_required=0    "allow JSX in .js files
 
 "colorscheme
-let g:material_style='oceanic'
-let g:airline_theme='material'
-colorscheme vim-material
+"let g:material_style='oceanic'
+"let g:airline_theme='palenight'
+let g:palenight_terminal_italics=1
+"colorscheme gruvbox
+if has("gui_running")
+  colorscheme palenight
+else
+  colorscheme gruvbox
+endif
+  
 
 "remap add mark, shoud be here for some reason
 nnoremap gm m
