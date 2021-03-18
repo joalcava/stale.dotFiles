@@ -1,5 +1,7 @@
 " Must Have configurations
 "-----------------------------------------------------------
+set t_ut=""
+set t_Co=256
 set nocompatible            "vim defaults not Vi
 set encoding=utf-8          "encoding, necessary for YCM
 set hlsearch                "highlight search matches
@@ -35,14 +37,15 @@ set go-=L                   "remove left-hand scroll bar
 set background=dark         "use dark themes
 "font
 if has("gui_running")
+  set guioptions=icpM
   if has("gui_gtk2")
     set guifont=iosevka\ 12
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    set guifont=iosevka:h12
+    set guifont=Fantasque\ sans\ mono:h13
     "use directx to render fonts
-    set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
+    set rop=type:directx,gamma:1.25,contrast:0.25,level:0.75,geom:1,renmode:5,taamode:1
   else
     set guifont=fira\ code\ 10
   endif
