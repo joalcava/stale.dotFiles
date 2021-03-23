@@ -35,6 +35,7 @@ set go-=m                   "remove menu bar
 set go-=r                   "remove right-hand scroll bar
 set go-=L                   "remove left-hand scroll bar
 set background=dark         "use dark themes
+
 "font
 if has("gui_running")
   set guioptions=icpM
@@ -43,7 +44,7 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
-    set guifont=Fantasque\ sans\ mono:h13
+    set guifont=Agave:h14
     "use directx to render fonts
     set rop=type:directx,gamma:1.25,contrast:0.25,level:0.75,geom:1,renmode:5,taamode:1
   else
@@ -90,8 +91,6 @@ map <C-Q> :q!<CR>
 map <leader>ee :NERDTreeFind<CR>
 "reload vimrc   
 nmap <silent> <leader>rc :so $MYVIMRC<CR> 
-"allow ; to act like : in normal mode
-nnoremap ; :
 "clear search with shift+enter
 nnoremap <S-CR> :noh<CR>
 "next error or lint
@@ -112,6 +111,7 @@ nnoremap <C-p> :FZF<CR>
 call plug#begin('~/.vim/plugged')
 
 "syntax
+Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -129,18 +129,23 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-repeat'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 
 "misc
 Plug 'tpope/vim-sensible'
 Plug 'Yggdroot/indentLine'
 
 "themes and appearance
-Plug 'rainglow/vim'
-Plug 'hzchirs/vim-material'
-Plug 'soft-aesthetic/soft-era-vim'
-Plug 'vim-airline/vim-airline'
+Plug 'srcery-colors/srcery-vim'
+Plug 'pineapplegiant/spaceduck'
 Plug 'morhetz/gruvbox'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'rakr/vim-one'
+Plug 'sjl/badwolf'
+Plug 'jaredgorski/spacecamp'
+
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -168,12 +173,15 @@ let g:jsx_ext_required=0    "allow JSX in .js files
 "colorscheme
 "let g:material_style='oceanic'
 "let g:airline_theme='palenight'
+"let g:airline_theme='spaceduck'
 let g:palenight_terminal_italics=1
 "colorscheme gruvbox
 if has("gui_running")
-  colorscheme palenight
+  colorscheme srcery
+  "colorscheme spacecamp
 else
-  colorscheme gruvbox
+  "colorscheme gruvbox
+  colorscheme spacecamp
 endif
   
 
